@@ -15,8 +15,16 @@
 
 @implementation AppDelegate
 
+BOOL checkAccessibility()
+{
+    NSDictionary* opts = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
+    return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)opts);
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    
+
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
